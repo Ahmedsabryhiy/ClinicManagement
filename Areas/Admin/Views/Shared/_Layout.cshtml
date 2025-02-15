@@ -201,28 +201,39 @@
                                                 <div class="col-md-6">
                                                     <ul>
                                                         <li class="nav-item"><a class="nav-link" asp-controller="Patient" asp-action="List">List</a></li>
-                                                        <li class="nav-item"><a class="nav-link" href="pages/charts/morris.html">Add</a></li>
+                                                        <li class="nav-item"><a class="nav-link" asp-controller="Patient" asp-action="Edit">Add</a></li>
                                                        
                                                     </ul>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <ul>
-                                                        <li class="nav-item"><a class="nav-link" href="pages/charts/sparkline.html">Sparkline</a></li>
-                                                        <li class="nav-item"><a class="nav-link" href="pages/charts/c3.html">C3 Chart</a></li>
-                                                        <li class="nav-item"><a class="nav-link" href="pages/charts/chartist.html">Chartist</a></li>
-                                                        <li class="nav-item"><a class="nav-link" href="pages/charts/justGage.html">JustGage</a></li>
+                                                        <li class="nav-item"><a class="nav-link"  asp-controller="Doctor" asp-action="List" >List</a></li>
+                                                        <li class="nav-item"><a class="nav-link"  asp-controller="Doctor" asp-action="Edit">Add</a></li>
+            
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-group col-md-3">
-                                        <p class="category-heading">Table</p>
+                                        <p class="category-heading">Appointments</p>
                                         <ul class="submenu-item">
-                                            <li class="nav-item"><a class="nav-link" href="pages/tables/basic-table.html">Basic Table</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="pages/tables/data-table.html">Data Table</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="pages/tables/js-grid.html">Js-grid</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="pages/tables/sortable-table.html">Sortable Table</a></li>
+                                            <li class="nav-item"><a class="nav-link" asp-controller="Appointment" asp-action="List">List</a></li>
+                                            <li class="nav-item"><a class="nav-link"  asp-controller="Appointment" asp-action="Edit">Add</a></li>
+                                          </ul>
+                                    </div>
+                                    <div class="col-group col-md-3">
+                                        <p class="category-heading">Appointment Medical Services</p>
+                                        <ul class="submenu-item">
+                                            <li class="nav-item"><a class="nav-link" asp-controller="AppointmentMedicalService" asp-action="List">List</a></li>
+                                            <li class="nav-item"><a class="nav-link" asp-controller="AppointmentMedicalService" asp-action="Edit">Add</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-group col-md-3">
+                                        <p class="category-heading">Medical Services</p>
+                                        <ul class="submenu-item">
+                                            <li class="nav-item"><a class="nav-link" asp-controller="MedicalService" asp-action="List">List</a></li>
+                                            <li class="nav-item"><a class="nav-link" asp-controller="MedicalService" asp-action="Edit">Add</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-group col-md-3">

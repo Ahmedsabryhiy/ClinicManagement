@@ -1,0 +1,88 @@
+﻿@model List<MedicalServiceDTO  >
+
+
+
+<div class="container-scroller">
+
+    <div class="container-fluid page-body-wrapper">
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h3 class="page-title"> Medical service  </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Medical services</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Medical services</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title"> Medical service</h4>
+                        <div class="row">
+                            <div class="col-12">
+                                <a asp-controller="MedicalService" asp-action="Edit" class="btn btn-success btn-fw">New</a>
+                                <table id="order-listing" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th> Service Name</th>
+                                            <th> Service price </th>
+
+
+
+                                            <th>Actions</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.Name</td>
+                                                <td>@item.ServicePrice</td>
+                                     
+
+                                              
+
+                                                <td class="col-md-4" style="margin:0px;padding:0px;">
+                                                    <a style="height:max-content"
+                                                       asp-controller="MedicalService" asp-action="Edit" asp-route-id="@item.Id"
+                                                       class="btn btn-info btn-fw">Edit</a>
+
+
+                                                    <a asp-controller="MedicalService" asp-action="Delete" asp-route-id="@item.Id"
+                                                       class="btn btn-danger btn-fw"
+                                                       onclick="return confirm(" Are you sure");">Delete</a>
+                                                </td>
+
+                                            </tr>
+                                        }
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+
+
+@section Scripts {
+    <!-- Plugin js for this page -->
+    <script src="~/admin/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="~/admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page -->
+    <script src="~/admin/assets/js/data-table.js"></script>
+    <!-- End custom js for this page -->
+}

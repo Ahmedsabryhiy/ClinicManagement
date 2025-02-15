@@ -33,9 +33,12 @@ namespace ClinicManagement
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             builder.Services.AddScoped<IPatient, PatientService>();
             builder.Services.AddScoped<IDoctor, DoctorService>();
+            builder.Services.AddScoped<IAppointmentMedicalService,AppointmentMedicalService  >();
 
             builder.Services.AddScoped<IAppointment, AppointmentService>();
             builder.Services.AddScoped<IInvoice, InvoiceService>();
+         
+            builder.Services.AddScoped<IMedicalService, MedicalService>();
             builder.Services.AddScoped<IAppointmentMedicalService, AppointmentMedicalService>();
 
 

@@ -1,0 +1,66 @@
+﻿@model  AppointmentDTO
+
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> form Appointment </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                <li class="breadcrumb-item active" aria-current="page">form Appointment</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-md-8 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Default form</h4>
+                    <p class="card-description"> Basic form  Doctor </p>
+                    <form class="forms-sample" method="post" enctype="multipart/form-data"
+                          asp-controller="Appointment" asp-action="Save" role="form">
+                        <input asp-for="Id" type="hidden" />
+
+                        <div class="form-group">
+                            <label for="exampleInputUsername1"> Stauts</label>
+                            <input asp-for="Status " type="text" class="form-control" placeholder="Stauts">
+                            <span asp-validation-for="Status"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Appointment Date</label>
+                            <input asp-for="AppointmentDate  " type="datetime" class="form-control" placeholder="Appointment Date">
+                            <span asp-validation-for="AppointmentDate"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PatientId"></label>
+                            <select asp-for="PatientId" class="form-control"
+                                    asp-items="ViewBag.PatientList">
+                                <option value="">-- Select Patient --</option>
+                            </select>
+                            <span asp-validation-for="PatientId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DoctorId "></label>
+                            <select asp-for="DoctorId" class="form-control"
+                                    asp-items="ViewBag.DoctorList">
+                                <option value="">-- Select Patient --</option>
+                            </select>
+                            <span asp-validation-for="PatientId" class="text-danger"></span>
+                        </div>
+                        <button type="submit" formmethod="post" class="btn btn-gradient-primary me-2">Save</button>
+                        <button class="btn btn-light">New</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+@section Scripts
+{
+
+}
+
